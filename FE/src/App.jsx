@@ -1,22 +1,22 @@
-// eslint-disable-next-line no-unused-vars
 import React from 'react';
-import Register from './Components/Sign/Register/Register';
-import AlredySign from './Components/Sign/AlredySign/AlredySign';
-import Login from './Components/Sign/Login/Login';
-import ResetPass from './Components/Sign/ResetPass/ResetPass';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './Components/Common/SideBar';
 import UpBar from './Components/Common/UpBar';
-
+import Main from './Components/Main/Main';
+import SalesSummary from './Pages/Reports/SalesSummary';
 function App() {
   return (
-    <div className="App">
-      {/* <AlredySign/> */}
-      <ResetPass/>
-      {/* <Login/> */}
-      {/* <Register /> */}
-      {/* <UpBar />
-      <Sidebar /> */}
-    </div>
+    <Router>
+      <div>
+        <UpBar />
+        <Sidebar />
+        <Main>
+          <Routes>
+            <Route path="/sales-summary" element={<SalesSummary />} />
+          </Routes>
+        </Main>
+      </div>
+    </Router>
   );
 }
 

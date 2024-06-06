@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 const Sidebar = () => {
@@ -26,49 +26,49 @@ const Sidebar = () => {
             </a>
             <ul className="sidebar-dropdown list-unstyled collapse auth">
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <Link to="/sales-summary" className="sidebar-link text-white">
                   Sales Summary
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <Link to="/sales-by-item" className="sidebar-link text-white">
                   Sales By Item
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <Link to="/sales-by-employee" className="sidebar-link text-white">
                   Sales By Employee
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <Link to="/sales-by-category" className="sidebar-link text-white">
                   Sales By Category
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <Link to="/sales-by-payment-type" className="sidebar-link text-white">
                   Sales By Payment Type
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <Link to="/receipts" className="sidebar-link text-white">
                   Receipts
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <Link to="/sales-by-modifier" className="sidebar-link text-white">
                   Sales By Modifier
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <Link to="/discounts" className="sidebar-link text-white">
                   Discounts
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <Link to="/taxes" className="sidebar-link text-white">
                   Taxes
-                </a>
+                </Link>
               </li>
             </ul>
           </li>
@@ -79,22 +79,22 @@ const Sidebar = () => {
             </a>
             <ul className="sidebar-dropdown list-unstyled collapse items">
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <a href="#" className="sidebar-link  text-white">
                   Items List
                 </a>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <a href="#" className="sidebar-link  text-white">
                   Categories
                 </a>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <a href="#" className="sidebar-link  text-white">
                   Modifier
                 </a>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <a href="#" className="sidebar-link  text-white">
                   Discounts
                 </a>
               </li>
@@ -113,12 +113,12 @@ const Sidebar = () => {
             </a>
             <ul className="sidebar-dropdown list-unstyled collapse employees">
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <a href="#" className="sidebar-link  text-white">
                   Employee List
                 </a>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <a href="#" className="sidebar-link text-white">
                   Access Rights
                 </a>
               </li>
@@ -164,7 +164,7 @@ const Sidebar = () => {
       </aside>
       <div className="main p-3">
         <div className="text-center">
-          <h1>home</h1>
+          <h1>Home</h1>
         </div>
       </div>
     </div>

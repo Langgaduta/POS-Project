@@ -35,35 +35,29 @@ body {
   min-width: 70px;
   height: 100vh;
   z-index: 1000;
-  transition: all 0.25s ease-in-out;
-  background-color: #ffffff;
+  transition: width 0.25s ease-in-out, min-width 0.25s ease-in-out;
+  background-color: #580865;
   display: flex;
   flex-direction: column;
   position: fixed;
-  overflow-y: overlay; 
+  overflow-y: hidden;
 }
-
-.sidebar-dropdown {
-  overflow-y: hidden; 
-}
-
-#sidebar::-webkit-scrollbar {
-  width: 0;
-  display: none; 
-}
-
-
 
 #sidebar.expand {
   width: 260px;
   min-width: 260px;
 }
 
+#sidebar::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
 .main {
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
-  transition: all 0.35s ease-in-out;
+  transition: margin-left 0.35s ease-in-out, background-color 0.35s ease-in-out;
   background-color: #fafbfe;
   margin-left: 70px;
   overflow-y: auto;
@@ -78,11 +72,12 @@ body {
   cursor: pointer;
   border: 0;
   padding: 1rem 1.5rem;
+  transition: transform 0.25s ease-in-out;
 }
 
 .toggle-btn i {
   font-size: 1.5rem;
-  color: #580865;
+  color: #ffffff;
 }
 
 .sidebar-logo {
@@ -90,7 +85,7 @@ body {
 }
 
 .sidebar-logo a {
-  color: #580865;
+  color: #ffffff;
   font-size: 1.15rem;
   font-weight: 600;
 }
@@ -107,11 +102,12 @@ body {
 
 a.sidebar-link {
   padding: 0.625rem 1.625rem;
-  color: #580865;
+  color: #ffffff;
   display: block;
   font-size: 0.9rem;
   white-space: nowrap;
   border-left: 3px solid transparent;
+  transition: background-color 0.25s ease-in-out, border-left 0.25s ease-in-out;
 }
 
 .sidebar-link i {
@@ -120,8 +116,8 @@ a.sidebar-link {
 }
 
 a.sidebar-link:hover {
-  background-color: rgba(220, 11, 11, 0.075);
-  border-left: 3px solid #580865;
+  background-color: rgba(255, 216, 216, 0.075);
+  border-left: 3px solid #ffe5e5;
 }
 
 .sidebar-item {
@@ -135,10 +131,13 @@ a.sidebar-link:hover {
   background-color: #ffffff;
   padding: 0;
   min-width: 15rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.25s ease-in-out, opacity 0.25s ease-in-out;
 }
 
 #sidebar:not(.expand) .sidebar-item:hover .has-dropdown + .sidebar-dropdown {
-  display: block;
   max-height: 15em;
   width: 100%;
   opacity: 1;
@@ -154,10 +153,10 @@ a.sidebar-link:hover {
   right: 1.5rem;
   top: 1.4rem;
   transform: rotate(-135deg);
-  transition: all 0.2s ease-out;
+  transition: transform 0.2s ease-out;
 }
 
 #sidebar.expand .sidebar-link[data-bs-toggle='collapse'].collapsed::after {
   transform: rotate(45deg);
-  transition: all 0.2s ease-out;
+  transition: transform 0.2s ease-out;
 }
