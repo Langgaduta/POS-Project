@@ -4,18 +4,22 @@ import Sidebar from './Components/Common/SideBar';
 import UpBar from './Components/Common/UpBar';
 import Main from './Components/Main/Main';
 import SalesSummary from './Pages/Reports/SalesSummary';
-function App() {
+import SalesItem from './Pages/Reports/SalesByItem';
+import SalesEmployee from './Pages/Reports/SalesByEmployee';
+import SalesCategory from './Pages/Reports/SalesByCategory';
+
+const App = () => {
   return (
     <Router>
-      <div>
-        <UpBar />
-        <Sidebar />
-        <Main>
-          <Routes>
-            <Route path="/sales-summary" element={<SalesSummary />} />
-          </Routes>
-        </Main>
-      </div>
+      <UpBar />
+      <Sidebar />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/salesSummary" element={<SalesSummary />} />
+        <Route path="/sales-by-item" element={<SalesItem />} />
+        <Route path="/sales-by-employee" element={<SalesEmployee />} />
+        <Route path="/sales-by-category" element={<SalesCategory />} />
+      </Routes>
     </Router>
   );
 }

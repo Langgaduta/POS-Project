@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
+import Main from '../Main/Main';
 
 const Sidebar = () => {
   const toggleSidebar = () => {
@@ -26,7 +27,7 @@ const Sidebar = () => {
             </a>
             <ul className="sidebar-dropdown list-unstyled collapse auth">
               <li className="sidebar-item">
-                <Link to="/sales-summary" className="sidebar-link text-white">
+                <Link to="/salesSummary" className="sidebar-link text-white">
                   Sales Summary
                 </Link>
               </li>
@@ -162,11 +163,8 @@ const Sidebar = () => {
           </li>
         </ul>
       </aside>
-      <div className="main p-3">
-        <div className="text-center">
-          <h1>Home</h1>
-        </div>
-      </div>
+      
+
     </div>
   );
 };
