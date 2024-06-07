@@ -1,4 +1,4 @@
-// pages/SalesSummary.jsx
+
 import React from 'react';
 import Navbar from '../../../Components/Elements/Navbar/Navbar';
 

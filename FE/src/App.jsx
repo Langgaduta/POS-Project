@@ -30,6 +30,8 @@ const App = () => {
         <Route path="/taxes" element={<Taxes />} />
       </Routes>
     </Router>
+
+  
   );
 }
 
