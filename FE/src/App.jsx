@@ -1,21 +1,34 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './Components/Common/SideBar';
-import UpBar from './Components/Common/UpBar';
-import Main from './Components/Main/Main';
-import SalesSummary from './Pages/Reports/SalesSummary';
-function App() {
+import Navbar from './Components/Elements/Navbar/Navbar';
+import Sidebar from './Components/Elements/Sidebar/SideBar';
+import SalesSummary from './Pages/Reports/SalesSummary/SalesSummary';
+import SalesByItem from './Pages/Reports/SalesByItem/SalesByItem';
+import SalesByEmployee from './Pages/Reports/SalesByEmployee/SalesByEmployee';
+import SalesByCategory from './Pages/Reports/SalesByCategory/SalesByCategory';
+import SalesByPaymentType from './Pages/Reports/SalesByPaymentType/SalesByPaymentType';
+import Receipts from './Pages/Reports/Receipts/Receipts';
+import SalesByModifier from './Pages/Reports/SalesByModifier/SalesByModifier';
+import Discounts from './Pages/Reports/Discounts/Discounts';
+import Taxes from './Pages/Reports/Taxes/Taxes';
+
+
+const App = () => {
   return (
     <Router>
-      <div>
-        <UpBar />
-        <Sidebar />
-        <Main>
-          <Routes>
-            <Route path="/sales-summary" element={<SalesSummary />} />
-          </Routes>
-        </Main>
-      </div>
+      <Navbar />  
+      <Sidebar />
+      <Routes>
+        <Route path="/sales-summary" element={<SalesSummary />} />
+        <Route path="/sales-by-item" element={<SalesByItem />} />
+        <Route path="/sales-by-employee" element={<SalesByEmployee />} />
+        <Route path="/sales-by-category" element={<SalesByCategory />} />
+        <Route path="/sales-by-payment-type" element={<SalesByPaymentType />} />
+        <Route path="/receipts" element={<Receipts />} />
+        <Route path="/sales-by-modifier" element={<SalesByModifier />} />
+        <Route path="/discounts" element={<Discounts />} />
+        <Route path="/taxes" element={<Taxes />} />
+      </Routes>
     </Router>
   );
 }

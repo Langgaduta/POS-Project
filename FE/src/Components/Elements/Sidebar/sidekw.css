@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-*,
-*::after,
-*::before {
+::after,
+::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -27,19 +26,24 @@ body {
 
 .wrapper {
   display: flex;
-  position: relative;
+}
+
+.main {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.35s ease-in-out;
+  background-color: #fafbfe;
 }
 
 #sidebar {
   width: 70px;
   min-width: 70px;
-  height: 100vh;
   z-index: 1000;
-  transition: width 0.25s ease-in-out, min-width 0.25s ease-in-out;
-  background-color: #580865;
+  transition: all 0.25s ease-in-out;
+  background-color: #0e2238;
   display: flex;
   flex-direction: column;
-  position: fixed;
   overflow-y: hidden;
 }
 
@@ -48,36 +52,16 @@ body {
   min-width: 260px;
 }
 
-#sidebar::-webkit-scrollbar {
-  width: 0;
-  display: none;
-}
-
-.main {
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  transition: margin-left 0.35s ease-in-out, background-color 0.35s ease-in-out;
-  background-color: #fafbfe;
-  margin-left: 70px;
-  overflow-y: auto;
-}
-
-.main.dimmed {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 .toggle-btn {
   background-color: transparent;
   cursor: pointer;
   border: 0;
   padding: 1rem 1.5rem;
-  transition: transform 0.25s ease-in-out;
 }
 
 .toggle-btn i {
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #fff;
 }
 
 .sidebar-logo {
@@ -85,7 +69,7 @@ body {
 }
 
 .sidebar-logo a {
-  color: #ffffff;
+  color: #fff;
   font-size: 1.15rem;
   font-weight: 600;
 }
@@ -102,12 +86,11 @@ body {
 
 a.sidebar-link {
   padding: 0.625rem 1.625rem;
-  color: #ffffff;
+  color: #fff;
   display: block;
   font-size: 0.9rem;
   white-space: nowrap;
   border-left: 3px solid transparent;
-  transition: background-color 0.25s ease-in-out, border-left 0.25s ease-in-out;
 }
 
 .sidebar-link i {
@@ -116,8 +99,8 @@ a.sidebar-link {
 }
 
 a.sidebar-link:hover {
-  background-color: rgba(255, 216, 216, 0.075);
-  border-left: 3px solid #ffe5e5;
+  background-color: rgba(255, 255, 255, 0.075);
+  border-left: 3px solid #3b7ddd;
 }
 
 .sidebar-item {
@@ -128,16 +111,14 @@ a.sidebar-link:hover {
   position: absolute;
   top: 0;
   left: 70px;
-  background-color: #ffffff;
+  background-color: #0e2238;
   padding: 0;
   min-width: 15rem;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  display: none;
 }
 
 #sidebar:not(.expand) .sidebar-item:hover .has-dropdown + .sidebar-dropdown {
+  display: block;
   max-height: 15em;
   width: 100%;
   opacity: 1;
@@ -153,10 +134,10 @@ a.sidebar-link:hover {
   right: 1.5rem;
   top: 1.4rem;
   transform: rotate(-135deg);
-  transition: transform 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 #sidebar.expand .sidebar-link[data-bs-toggle='collapse'].collapsed::after {
   transform: rotate(45deg);
-  transition: transform 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }

@@ -1,7 +1,7 @@
-// eslint-disable-next-line no-unused-vars
+
 import React from 'react';
 
-const UpBar = () => {
+const Navbar = () => {
   return (
     <nav className="navbar pt-3 pb-3 shadow sticky-top" style={{ backgroundColor: '#ffffff' }}>
       <div className="container-fluid d-flex justify-content-between align-items-center">
@@ -33,4 +33,4 @@ const UpBar = () => {
   );
 };
 
-export default UpBar;
+export default Navbar;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';
+import './Sidebar.css';
 
 const Sidebar = () => {
   const toggleSidebar = () => {
@@ -15,15 +15,15 @@ const Sidebar = () => {
             <i className="lni lni-grid-alt"></i>
           </button>
           <div className="sidebar-logo">
-            <a href="#">TokoKu</a>
+            <Link to="/">TokoKu</Link>
           </div>
         </div>
         <ul className="sidebar-nav">
           <li className="sidebar-item">
-            <a href="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target=".auth" aria-expanded="false" aria-controls="auth">
+            <Link to="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target=".auth" aria-expanded="false" aria-controls="auth">
               <i className="lni lni-agenda"></i>
               <span>Reports</span>
-            </a>
+            </Link>
             <ul className="sidebar-dropdown list-unstyled collapse auth">
               <li className="sidebar-item">
                 <Link to="/sales-summary" className="sidebar-link text-white">
@@ -73,100 +73,95 @@ const Sidebar = () => {
             </ul>
           </li>
           <li className="sidebar-item">
-            <a href="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target=".items" aria-expanded="false" aria-controls="items">
+            <Link to="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target=".items" aria-expanded="false" aria-controls="items">
               <i className="lni lni-briefcase"></i>
               <span>Items</span>
-            </a>
+            </Link>
             <ul className="sidebar-dropdown list-unstyled collapse items">
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link  text-white">
+                <Link to="#" className="sidebar-link  text-white">
                   Items List
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link  text-white">
+                <Link to="#" className="sidebar-link  text-white">
                   Categories
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link  text-white">
+                <Link to="#" className="sidebar-link  text-white">
                   Modifier
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link  text-white">
+                <Link to="#" className="sidebar-link  text-white">
                   Discounts
-                </a>
+                </Link>
               </li>
             </ul>
           </li>
           <li className="sidebar-item">
-            <a href="#" className="sidebar-link">
+            <Link to="#" className="sidebar-link">
               <i className="lni lni-cart-full"></i>
               <span>Inventory Management</span>
-            </a>
+            </Link>
           </li>
           <li className="sidebar-item">
-            <a href="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target=".employees" aria-expanded="false" aria-controls="employees">
+            <Link to="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target=".employees" aria-expanded="false" aria-controls="employees">
               <i className="lni lni-layout"></i>
               <span>Employees</span>
-            </a>
+            </Link>
             <ul className="sidebar-dropdown list-unstyled collapse employees">
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link  text-white">
+                <Link to="#" className="sidebar-link  text-white">
                   Employee List
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-white">
+                <Link to="#" className="sidebar-link text-white">
                   Access Rights
-                </a>
+                </Link>
               </li>
             </ul>
           </li>
           <li className="sidebar-item">
-            <a href="#" className="sidebar-link">
+            <Link to="#" className="sidebar-link">
               <i className="lni lni-customer"></i>
               <span>Customers</span>
-            </a>
+            </Link>
           </li>
           <li className="sidebar-item">
-            <a href="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target=".integrations" aria-expanded="false" aria-controls="integrations">
+            <Link to="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse" data-bs-target=".integrations" aria-expanded="false" aria-controls="integrations">
               <i className="lni lni-popup"></i>
               <span>Integrations</span>
-            </a>
+            </Link>
             <ul className="sidebar-dropdown list-unstyled collapse integrations">
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <Link to="#" className="sidebar-link text-dark">
                   Apps
-                </a>
+                </Link>
               </li>
               <li className="sidebar-item">
-                <a href="#" className="sidebar-link text-dark">
+                <Link to="#" className="sidebar-link text-dark">
                   Access Token
-                </a>
+                </Link>
               </li>
             </ul>
           </li>
           <li className="sidebar-item">
-            <a href="#" className="sidebar-link">
+            <Link to="#" className="sidebar-link">
               <i className="lni lni-cog"></i>
               <span>Settings</span>
-            </a>
+            </Link>
           </li>
           <li className="sidebar-item">
-            <a href="#" className="sidebar-link">
+            <Link to="#" className="sidebar-link">
               <i className="fa-regular fa-circle-question"></i>
               <span>Help</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </aside>
-      <div className="main p-3">
-        <div className="text-center">
-          <h1>Home</h1>
-        </div>
-      </div>
     </div>
   );
 };
