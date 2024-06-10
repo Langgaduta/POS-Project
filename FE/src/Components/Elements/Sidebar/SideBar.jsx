@@ -1,4 +1,5 @@
 
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -25,7 +26,7 @@ const Sidebar = () => {
               <i className="lni lni-agenda"></i>
               <span>Reports</span>
             </Link>
-            <ul className="sidebar-dropdown list-unstyled collapse auth">
+            <ul className="sidebar-dropdown list-unstyled collapse auth px-4 mx-2">
               <li className="sidebar-item">
                 <Link to="/sales-summary" className="sidebar-link text-white">
                   Sales Summary
@@ -78,31 +79,31 @@ const Sidebar = () => {
               <i className="lni lni-briefcase"></i>
               <span>Items</span>
             </Link>
-            <ul className="sidebar-dropdown list-unstyled collapse items">
+            <ul className="sidebar-dropdown list-unstyled collapse items px-4 mx-2">
               <li className="sidebar-item">
-                <Link to="#" className="sidebar-link  text-white">
+                <Link to="item-list" className="sidebar-link  text-white">
                   Items List
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="#" className="sidebar-link  text-white">
+                <Link to="categories" className="sidebar-link  text-white">
                   Categories
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="#" className="sidebar-link  text-white">
+                <Link to="modifier" className="sidebar-link  text-white">
                   Modifier
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="#" className="sidebar-link  text-white">
+                <Link to="discountss" className="sidebar-link  text-white">
                   Discounts
                 </Link>
               </li>
             </ul>
           </li>
           <li className="sidebar-item">
-            <Link to="#" className="sidebar-link">
+            <Link to="inventory-management" className="sidebar-link">
               <i className="lni lni-cart-full"></i>
               <span>Inventory Management</span>
             </Link>
@@ -112,21 +113,21 @@ const Sidebar = () => {
               <i className="lni lni-layout"></i>
               <span>Employees</span>
             </Link>
-            <ul className="sidebar-dropdown list-unstyled collapse employees">
+            <ul className="sidebar-dropdown list-unstyled collapse employees px-4 mx-2">
               <li className="sidebar-item">
-                <Link to="#" className="sidebar-link  text-white">
+                <Link to="employee-list" className="sidebar-link  text-white">
                   Employee List
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="#" className="sidebar-link text-white">
+                <Link to="Access-rights" className="sidebar-link text-white">
                   Access Rights
                 </Link>
               </li>
             </ul>
           </li>
           <li className="sidebar-item">
-            <Link to="#" className="sidebar-link">
+            <Link to="customers" className="sidebar-link">
               <i className="lni lni-customer"></i>
               <span>Customers</span>
             </Link>
@@ -136,27 +137,27 @@ const Sidebar = () => {
               <i className="lni lni-popup"></i>
               <span>Integrations</span>
             </Link>
-            <ul className="sidebar-dropdown list-unstyled collapse integrations">
+            <ul className="sidebar-dropdown list-unstyled collapse integrations px-4 mx-2">
               <li className="sidebar-item">
-                <Link to="#" className="sidebar-link text-dark">
+                <Link to="apps" className="sidebar-link text-white">
                   Apps
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="#" className="sidebar-link text-dark">
+                <Link to="access-token" className="sidebar-link text-white">
                   Access Token
                 </Link>
               </li>
             </ul>
           </li>
           <li className="sidebar-item">
-            <Link to="#" className="sidebar-link">
+            <Link to="setting" className="sidebar-link">
               <i className="lni lni-cog"></i>
               <span>Settings</span>
             </Link>
           </li>
           <li className="sidebar-item">
-            <Link to="#" className="sidebar-link">
+            <Link to="help" className="sidebar-link">
               <i className="fa-regular fa-circle-question"></i>
               <span>Help</span>
             </Link>
