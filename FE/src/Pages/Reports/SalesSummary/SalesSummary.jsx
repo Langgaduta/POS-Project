@@ -1,23 +1,19 @@
-
 import React from 'react';
-// import Navbar from '../../../Components/Elements/Navbar/Navbar';
-import Button from '@material-ui/core/Button';
+import LineChartComponent from '../../../Components/Elements/Chart/Chart';
 
 const SalesSummary = () => {
   return (
-    <div className="container">
-
-      <div className="row text-center mt-4" style={{height: '100vh'}}>
-        <h1>Sales Summary</h1>
-        <Button variant="contained" color="primary">
-  Klik Saya
-</Button>
+    <div className="container-fluid">
+      <div className="row justify-content-center" style={{ minHeight: '100vh', backgroundColor: '#e8e7e9', marginLeft: '57px' }}>
+        <div className="col-md-12">
+          <div className="card mt-3 justify-content-center">
+            <div className="card-body">
+              <LineChartComponent/>
+            </div>
+          </div>
+        </div>
       </div>
-    
     </div>
-    // <div id="curve_chart" style={{ width: "900px", height: "500px" }}></div>
-    // <div id="curve_chart" style={{ width: "100vh", height: "500px" }}></div>
-    // <div id="curve_chart" style={{ width: "900px", height: "500px" }}></div>
   );
 };
 
