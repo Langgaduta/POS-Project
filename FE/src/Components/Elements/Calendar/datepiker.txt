@@ -1,0 +1,90 @@
+// src/components/DatePicker.js
+
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import './DatePicker.css';
+
+const CustomDatePicker = () => {
+  const [endDate, setEndDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(new Date());
+
+  const handleDateChange = date => {
+    setStartDate(date);
+  };
+
+  const handleDateChangeEnd = date => {
+    setEndDate(date);
+  };
+
+  const handlePrevDay = () => {
+    const prevDay = new Date(startDate);
+    prevDay.setDate(startDate.getDate() - 1);
+    setStartDate(prevDay);
+  };
+
+  const handleNextDay = () => {
+    const nextDay = new Date(endDate);
+    nextDay.setDate(endDate.getDate() + 1);
+    setEndDate(nextDay);
+  };
+
+  return (
+    <div>
+      <div className="date-picker-container pt-2">
+        <button className="prev-button" onClick={handlePrevDay}>{'<'}</button>
+        <div className='dtepic'>
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => handleDateChange(date)}
+          dateFormat="dd/MM/yyyy"
+          selectsStart
+          startDate={startDate}
+          endDate={endDate}
+          maxDate={new Date()}
+          showTimeSelect
+          timeFormat="HH:mm"
+        />
+        <DatePicker
+          selected={endDate}
+          onChange={(date) => handleDateChangeEnd(date)}
+          dateFormat="dd/MM/yyyy"
+          selectsEnd
+          startDate={startDate}
+          endDate={endDate}
+          minDate={startDate}
+          maxDate={new Date()}
+          showTimeSelect
+          timeFormat="HH:mm"
+        />
+        
+        </div>
+        <button className="next-button" onClick={handleNextDay}>{'>'}</button>
+      </div>
+      <div>Selected Date: {startDate.toString()}</div>
+    </div>
+  );
+  // const [startDate, setStartDate] = useState(new Date("2014/02/08"));
+  // const [endDate, setEndDate] = useState(new Date("2014/02/10"));
+  // return (
+  //   <>
+  //     <DatePicker
+  //       selected={startDate}
+  //       onChange={(date) => setStartDate(date)}
+  //       selectsStart
+  //       startDate={startDate}
+  //       endDate={endDate}
+  //     />
+  //     <DatePicker
+  //       selected={endDate}
+  //       onChange={(date) => setEndDate(date)}
+  //       selectsEnd
+  //       startDate={startDate}
+  //       endDate={endDate}
+  //       minDate={startDate}
+  //     />
+  //   </>
+  // );
+};
+
+export default CustomDatePicker;
