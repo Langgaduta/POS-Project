@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 // Menghasilkan data dummy berdasarkan data uang yang diberikan
 const generateDummyData = (uangData) => {
@@ -26,7 +26,7 @@ const LineChartComponent = () => {
 
   useEffect(() => {
     // Data uang yang ditentukan secara manual
-    const uangData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0];
+    const uangData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     
     // Mendapatkan dummy data berdasarkan data uang yang ditentukan secara manual
     const dummyData = generateDummyData(uangData);
@@ -34,18 +34,18 @@ const LineChartComponent = () => {
   }, []);
 
   return (
-    <LineChart
-      width={800}
-      height={400}
-      data={data}
-      margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <Tooltip />
-      <Legend />
-      <Line type="monotone" dataKey="Rp" stroke="#8884d8" activeDot={{ r: 8 }} />
-    </LineChart>
+    <ResponsiveContainer width="100%" height={400}>
+      <LineChart
+        data={data}
+        margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <Tooltip />
+        <Legend />
+        <Line type="monotone" dataKey="Rp" stroke="#8884d8" activeDot={{ r: 8 }} />
+      </LineChart>
+    </ResponsiveContainer>
   );
 };
 

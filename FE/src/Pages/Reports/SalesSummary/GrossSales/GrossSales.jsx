@@ -1,9 +1,9 @@
 import React from 'react';
-import LineChartComponent from '../../../Components/Elements/Chart/Chart';
-import CustomDatePicker from '../../../Components/Elements/Calendar/DatePicker';
-import ComplexButton from '../../../Components/Elements/ComplexButton/ComplexButton';
+import LineChartComponent from '../../../../Components/Elements/Chart/Chart';
+import CustomDatePicker from '../../../../Components/Elements/Calendar/DatePicker';
+import ComplexButton from '../../../../Components/Elements/ComplexButton/ComplexButton';
 
-const SalesSummary = () => {
+const GrossSales = () => {
   return (
     <div className="container-fluid">
       <div className="row justify-content-center" style={{ minHeight: '100vh', backgroundColor: '#e8e7e9', marginLeft: '57px' }}>
@@ -27,4 +27,4 @@ const SalesSummary = () => {
   );
 };
 
-export default SalesSummary;
+export default GrossSales;

@@ -1,9 +1,9 @@
 import React from 'react';
-import LineChartComponent from '../../../Components/Elements/Chart/Chart';
-import CustomDatePicker from '../../../Components/Elements/Calendar/DatePicker';
-import ComplexButton from '../../../Components/Elements/ComplexButton/ComplexButton';
+import LineChartComponent from '../../../../Components/Elements/Chart/Chart';
+import CustomDatePicker from '../../../../Components/Elements/Calendar/DatePicker';
+import ComplexButton from '../../../../Components/Elements/ComplexButton/ComplexButton';
 
-const SalesSummary = () => {
+const NetSales = () => {
   return (
     <div className="container-fluid">
       <div className="row justify-content-center" style={{ minHeight: '100vh', backgroundColor: '#e8e7e9', marginLeft: '57px' }}>
@@ -12,13 +12,13 @@ const SalesSummary = () => {
           <div className="card mt-3 justify-content-center shadow">
             <div className="card-body">
               <ComplexButton/>
-              <p className='ms-3'>Gross Sales</p>
+              <p className='ms-3'>Net Sales</p>
               <LineChartComponent />
             </div>
           </div>
           <div className="card mt-3 justify-content-center shadow">
             <div className="card-body">
-              <p>Export</p>
+            <p>Export</p>
             </div>
           </div>
         </div>
@@ -27,4 +27,4 @@ const SalesSummary = () => {
   );
 };
 
-export default SalesSummary;
+export default NetSales;
