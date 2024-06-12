@@ -1,11 +1,11 @@
-// src/components/DatePicker.js
+
 
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FaCalendarAlt } from 'react-icons/fa';
 import './DatePicker.css';
-// import { format } from 'date-fns';
+
 
 const CustomDatePicker = () => {
   const [dateRange, setDateRange] = useState([new Date(), new Date()]);
@@ -16,9 +16,6 @@ const CustomDatePicker = () => {
     setDateRange([start, end]);
   };
 
-  // const handleDateChangeEnd = date => {
-  //   setEndDate(date);
-  // };
 
   const handlePrevDay = () => {
     if (startDate) {
@@ -61,33 +58,9 @@ const CustomDatePicker = () => {
         <button className="btn text-black py-1 bg-white border border-1" style={{ borderRadius: '0px  4px 4px 0px' }} onClick={handleNextDay}>{'>'}</button>
         </div>
       </div>
-      <div className="d-flex ">
-        {/* <div>Start Date: {startDate ? startDate.toLocaleDateString() : 'None'}</div><p> - </p>
-        <div>End Date: {endDate ? endDate.toLocaleDateString() : 'None'}</div> */}
-      </div>
     </div>
   );
-  // const [startDate, setStartDate] = useState(new Date("2014/02/08"));
-  // const [endDate, setEndDate] = useState(new Date("2014/02/10"));
-  // return (
-  //   <>
-  //     <DatePicker
-  //       selected={startDate}
-  //       onChange={(date) => setStartDate(date)}
-  //       selectsStart
-  //       startDate={startDate}
-  //       endDate={endDate}
-  //     />
-  //     <DatePicker
-  //       selected={endDate}
-  //       onChange={(date) => setEndDate(date)}
-  //       selectsEnd
-  //       startDate={startDate}
-  //       endDate={endDate}
-  //       minDate={startDate}
-  //     />
-  //   </>
-  // );
+
 };
 
 export default CustomDatePicker;

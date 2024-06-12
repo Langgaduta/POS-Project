@@ -1,4 +1,4 @@
-// eslint-disable-next-line no-unused-vars
+// App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Elements/Navbar/Navbar';
@@ -29,14 +29,13 @@ import Apps from './Pages/Integrations/Apps/Apps';
 import Settings from './Pages/Settings/Settings';
 import Help from './Pages/Help/Help';
 
-
 const App = () => {
   return (
     <Router>
-      <Navbar />  
+      <Navbar />
       <Sidebar />
       <Routes>
-        <Route path="/sales-summary" element={<SalesSummary />} />
+      <Route path="/sales-summary" element={<SalesSummary />} />
         <Route path="/sales-summary/gross-sales" element={<GrossSales />} />
         <Route path="/sales-summary/refunds" element={<Refunds />} />
         <Route path="/sales-summary/discount" element={<Discount />} />
@@ -64,9 +63,7 @@ const App = () => {
         <Route path="/help" element={<Help />} />
       </Routes>
     </Router>
-
-  
   );
-}
+};
 
 export default App;
