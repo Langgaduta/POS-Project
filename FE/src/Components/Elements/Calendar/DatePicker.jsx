@@ -42,7 +42,7 @@ const CustomDatePicker = () => {
         <div className="input-group">
         <button className="btn text-black py-1 bg-white border border-1" style={{ borderRadius: '4px  0px 0px 4px' }} onClick={handlePrevDay}>{'<'}</button>
         <div className="input-group-prepend">
-            <span className="input-group-text py-2 px-2" style={{ borderRadius: '0' }}>
+            <span className="input-group-text p-2" style={{ borderRadius: '0' }}>
             <FaCalendarAlt selectsRange/>
             </span>
           </div>
