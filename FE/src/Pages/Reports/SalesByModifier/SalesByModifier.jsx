@@ -1,15 +1,34 @@
-// pages/SalesSummary.jsx
 import React from 'react';
-import Navbar from '../../../Components/Elements/Navbar/Navbar';
+import LineChartComponent from '../../../Components/Elements/Chart/Chart';
+import CustomDatePicker from '../../../Components/Elements/Calendar/DatePicker';
+import ComplexButton from '../../../Components/Elements/ComplexButton/ComplexButton';
+import TimePicker from '../../../Components/Elements/TimePicker.js/TimePicker';
+import BasicTable from '../../../Components/Elements/TableExport/Tableexport';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTable } from '@fortawesome/free-solid-svg-icons';
 
-const SalesByModifier = () => {
+const SalesSummary = () => {
   return (
-    <div className="container">
-      <div className="row text-center mt-4" style={{height: '100vh'}}>
-        <h1>Sales By Modifier</h1>
+    <div className="container-fluid">
+      <div className="row justify-content-center" style={{ minHeight: '100vh', backgroundColor: '#e8e7e9', marginLeft: '57px', overflowX: 'hidden' }}>
+        <div className="col-md-12">
+          <div className='d-flex flex-wrap' style={{ width: '100%', overflowX: 'hidden' }}>
+            <CustomDatePicker /> 
+            <TimePicker />
+          </div>
+          <div className="card mt-3 justify-content-center shadow" style={{ overflowX: 'hidden', maxWidth: "1300px" }}>
+            <div className="card-body">
+              <div className='d-flex justify-content-between'>
+                <p className='ms-1' style={{ fontFamily: "'Roboto', sans-serif", fontSize: "18px", fontWeight: "600", lineHeight: "20px" }}>Export</p>
+                <FontAwesomeIcon icon={faTable} className='text-body-secondary me-2' />
+              </div>
+              <BasicTable />
+            </div>  
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default SalesByModifier;
+export default SalesSummary;

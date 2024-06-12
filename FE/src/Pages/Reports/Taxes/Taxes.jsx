@@ -1,16 +1,44 @@
-// pages/SalesSummary.jsx
 import React from 'react';
-import Navbar from '../../../Components/Elements/Navbar/Navbar';
+import CustomDatePicker from '../../../Components/Elements/Calendar/DatePicker';
+import TaxableSales from '../../../Components/Elements/TaxableSales/TaxableSales';
+import TimePicker from '../../../Components/Elements/TimePicker.js/TimePicker';
+import BasicTable from '../../../Components/Elements/TableExport/Tableexport';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTable } from '@fortawesome/free-solid-svg-icons';
 
-const Taxes = () => {
+const SalesSummary = () => {
   return (
-    
-    <div className="container">
-      <div className="row text-center mt-4" style={{height: '100vh'}}>
-        <h1>Taxes</h1>
+    <div className="container-fluid">
+      <div className="row justify-content-center" style={{ minHeight: '100vh', backgroundColor: '#e8e7e9', marginLeft: '57px', overflowX: 'hidden' }}>
+        <div className="col-md-12">
+          <div className='d-flex flex-wrap' style={{ width: '100%', overflowX: 'hidden' }}>
+            <CustomDatePicker /> 
+            <TimePicker />
+          </div>
+          <div style={{ maxWidth: "1300px" }}>
+              <div className="card mt-3 shadow" style={{ overflowX: 'hidden' }}>
+                <div className="card-body justify-content-center text-center"> 
+                  <div className="d-flex justify-content-center align-items-center mb-3">
+                    <TaxableSales />
+                  </div>
+                  {/* <p className='ms-3'>Gross Sales</p>
+                  <LineChartComponent /> */}
+                </div>
+              </div>
+              <div className="card mt-3 justify-content-center shadow" style={{ overflowX: 'hidden' }}>
+                <div className="card-body">
+                  <div className='d-flex justify-content-between'>
+                    <p className='ms-1' style={{ fontFamily: "'Roboto', sans-serif", fontSize: "18px", fontWeight: "600", lineHeight: "20px" }}>Export</p>
+                    <FontAwesomeIcon icon={faTable} className='text-body-secondary me-2' />
+                  </div>
+                  <BasicTable />
+                </div>  
+              </div>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Taxes;
+export default SalesSummary;

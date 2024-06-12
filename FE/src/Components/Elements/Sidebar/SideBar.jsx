@@ -38,13 +38,13 @@ const Sidebar = () => {
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="/sales-by-employee" className="sidebar-link text-white">
-                  Sales By Employee
+                <Link to="/sales-by-category" className="sidebar-link text-white">
+                  Sales By Category
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="/sales-by-category" className="sidebar-link text-white">
-                  Sales By Category
+                <Link to="/sales-by-employee" className="sidebar-link text-white">
+                  Sales By Employee
                 </Link>
               </li>
               <li className="sidebar-item">
