@@ -12,7 +12,7 @@ const NetSales = () => {
     <div className="container-fluid">
       <div className="row justify-content-center" style={{ minHeight: '100vh', backgroundColor: '#e8e7e9', marginLeft: '57px', overflowX: 'hidden' }}>
         <div className="col-md-12">
-          <div className='d-flex flex-wrap' style={{ width: '100%', overflowX: 'hidden' }}>
+          <div className='d-flex flex-wrap' style={{ width: '100%' }}>
             <CustomDatePicker /> 
             <TimePicker />
           </div>
