@@ -18,7 +18,10 @@ import SalesByModifier from './Pages/Reports/SalesByModifier/SalesByModifier';
 import Discounts from './Pages/Reports/Discounts/Discounts';
 import Taxes from './Pages/Reports/Taxes/Taxes';
 import ItemList from './Pages/Items/ItemsList/ItemList';
+import AddItem from './Pages/Items/ItemsList/AddItem/AddItem';
+import Import from './Pages/Items/ItemsList/Import/Import';
 import Categories from './Pages/Items/Categories/Categories';
+import AddCategory from './Pages/Items/Categories/AddCategory/AddCategory';
 import Modifier from './Pages/Items/Modifier/Modifier';
 import InventoryManagement from './Pages/InventoryManagement/InventoryManagement';
 import AccessRights from './Pages/employees/AccessRights/AccessRights';
@@ -35,7 +38,7 @@ const App = () => {
       <Navbar />
       <Sidebar />
       <Routes>
-      <Route path="/sales-summary" element={<SalesSummary />} />
+        <Route path="/sales-summary" element={<SalesSummary />} />
         <Route path="/sales-summary/gross-sales" element={<GrossSales />} />
         <Route path="/sales-summary/refunds" element={<Refunds />} />
         <Route path="/sales-summary/discount" element={<Discount />} />
@@ -50,7 +53,10 @@ const App = () => {
         <Route path="/discounts" element={<Discounts />} />
         <Route path="/taxes" element={<Taxes />} />
         <Route path="/item-list" element={<ItemList />} />
+        <Route path="/item-list/add-item" element={<AddItem />} />
+        <Route path="/item-list/import" element={<Import />} />
         <Route path="/categories" element={<Categories />} />
+        <Route path="/categories/add-category" element={<AddCategory />} />
         <Route path="/modifier" element={<Modifier />} />
         <Route path="/discounts" element={<Discounts />} />
         <Route path="/inventory-management" element={<InventoryManagement />} />
