@@ -14,7 +14,7 @@ const SalesByItem = () => {
       <div className="row" style={{ minHeight: '100vh', backgroundColor: '#e8e7e9', marginLeft: '57px' }}>
         <div className="col-12">
           {/* <DatePicker /> */}
-          <div className='d-flex flex-wrap' style={{ width: '100%', overflowX: 'hidden' }}>
+          <div className='d-flex flex-wrap' style={{ width: '100%'}}>
             <CustomDatePicker /> 
             <TimePicker />
           </div>
