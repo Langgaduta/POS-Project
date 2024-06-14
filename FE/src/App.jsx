@@ -31,6 +31,7 @@ import AccessToken from './Pages/Integrations/AccessToken/AccessToken';
 import Apps from './Pages/Integrations/Apps/Apps';
 import Settings from './Pages/Settings/Settings';
 import Help from './Pages/Help/Help';
+// import AddCategory from './Pages/Items/Categories/AddCategory/AddCategory';
 
 const App = () => {
   return (
