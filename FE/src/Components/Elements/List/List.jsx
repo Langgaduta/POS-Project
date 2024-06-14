@@ -70,7 +70,6 @@ const List = (props) => {
         </Link>
         {selectedItems.length > 0 && (
           <Button
-            variant="contained"
             style={{ marginLeft: '10px', backgroundColor: 'white', color: 'black' }}
           >
             <i className="fas fa-trash-alt" style={{ marginRight: '5px' }}></i>
