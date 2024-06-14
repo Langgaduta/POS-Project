@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from '../../../Components/Elements/Button/Button';
 import SelectVariant from '../../../Components/Elements/Select/Select';
 import BasicTable from '../../../Components/Elements/TableExport/Tableexport';
+import NoData from '../../../Components/Elements/NoData/NoData';
 
 const ItemList = () => {
   return (
@@ -43,7 +44,8 @@ const ItemList = () => {
                     </div>
                   </div>
                   <div className="mt-4">
-                    <BasicTable />
+                    <BasicTable />  
+                    {/* <NoData/> */}
                   </div>
                 </div>
               </div>
