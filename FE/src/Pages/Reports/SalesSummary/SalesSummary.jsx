@@ -18,7 +18,7 @@ const SalesSummary = () => {
           </div>
           <div style={{ maxWidth: "1300px" }}>
           <div className="card mt-3 shadow" style={{ overflowX: 'hidden' }}>
-            <div className="card-body justify-content-center text-center"> {/* Modifikasi di sini */}
+            <div className="card-body justify-content-center"> {/* Modifikasi di sini */}
               <div className="d-flex justify-content-center align-items-center mb-3"> {/* Modifikasi di sini */}
                 <ComplexButton />
               </div>

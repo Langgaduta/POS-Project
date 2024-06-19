@@ -12,7 +12,6 @@ export default function NoData() {
   return (
     <>
             <TableRow>
-              <TableCell colSpan={7} align="center">
                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" py={5}>
                   <FontAwesomeIcon icon={faTable} size="5x" className='text-secondary' />
                   <Typography variant="h6" component="div" mt={2} className='text-secondary' style={{ fontSize: "24px" }}>
@@ -22,7 +21,6 @@ export default function NoData() {
                     There are no sales in the selected time period
                   </Typography>
                 </Box>
-              </TableCell>
             </TableRow>
       </>
     

@@ -1,22 +1,10 @@
 import React, { useState } from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableRow from '@mui/material/TableRow';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTable } from '@fortawesome/free-solid-svg-icons';
-import Button from '@mui/material/Button';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
+import { TablePagination, TableRow, Box, TableContainer, TableCell, TableBody, Table, TableHead } from '@mui/material';
 import NoData from '../NoData/NoData';
+import { Link } from 'react-router-dom';
 
 function createData(Date, GrossSales, Refunds, Discounts, NetSales, CostOfGoods, GrossProfi) {
-  return { Date, GrossSales, Refunds, Discounts, NetSales, CostOfGoods, GrossProfi};
+  return { Date, GrossSales, Refunds, Discounts, NetSales, CostOfGoods, GrossProfi };
 }
 
 // Ubah ini untuk menguji jika ada data atau tidak
@@ -41,23 +29,15 @@ const rows = [
   createData('Honeycomb', 408, 3.2, 87, 6.5, 98, "contoh"),
 ];
 
-export default function BasicTable() {
+export default function BasicTable(props) {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  const handleNextPage = () => {
-    if ((page + 1) * rowsPerPage < rows.length) {
-      setPage(page + 1);
-    }
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
   };
 
-  const handlePreviousPage = () => {
-    if (page > 0) {
-      setPage(page - 1);
-    }
-  };
-
-  const handleRowsPerPageChange = (event) => {
+  const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
@@ -66,79 +46,62 @@ export default function BasicTable() {
 
   return (
     <>
-    <TableContainer>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        {/* <TableHead> */}
-          <TableRow>
-            <TableCell>Date</TableCell>
-            <TableCell align="right">Gross sales</TableCell>
-            <TableCell align="right">Refunds&nbsp;</TableCell>
-            <TableCell align="right">Discounts&nbsp;</TableCell>
-            <TableCell align="right">Net sales&nbsp;</TableCell>
-            <TableCell align="right">Cost of goods&nbsp;</TableCell>
-            <TableCell align="right">Gross profit&nbsp;</TableCell>
-          </TableRow>
-        {/* </TableHead> */}
-        <TableBody>
-          {paginatedRows.length > 0 ? (
-            paginatedRows.map((row) => (
-              <TableRow
-                key={row.Date}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {row.Date}
-                </TableCell>
-                <TableCell align="right">{row.GrossSales}</TableCell>
-                <TableCell align="right">{row.Refunds}</TableCell>
-                <TableCell align="right">{row.Discounts}</TableCell>
-                <TableCell align="right">{row.NetSales}</TableCell>
-                <TableCell align="right">{row.CostOfGoods}</TableCell>
-                <TableCell align="right">{row.GrossProfi}</TableCell>
-              </TableRow>
-            ))
-          ) : (
-            <NoData/>
-          )}
-        </TableBody>
-      </Table>
+      <TableContainer>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Date</TableCell>
+              <TableCell align="right">Gross sales</TableCell>
+              <TableCell align="right">Refunds&nbsp;</TableCell>
+              <TableCell align="right">Discounts&nbsp;</TableCell>
+              <TableCell align="right">Net sales&nbsp;</TableCell>
+              <TableCell align="right">Cost of goods&nbsp;</TableCell>
+              <TableCell align="right">Gross profit&nbsp;</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {paginatedRows.length > 0 ? (
+              paginatedRows.map((row) => (
+                <TableRow
+                  key={row.Date}
+                  component={Link}
+                  to={props.link}
+                  sx={{
+                    '&:last-child td, &:last-child th': { border: 0 },
+                    textDecoration: 'none',
+                    '&:hover': {
+                      backgroundColor: 'rgba(0, 0, 0, 0.08)',
+                    },
+                  }}
+                >
+                  <TableCell component="th" scope="row">
+                    {row.Date}
+                  </TableCell>
+                  <TableCell align="right">{row.GrossSales}</TableCell>
+                  <TableCell align="right">{row.Refunds}</TableCell>
+                  <TableCell align="right">{row.Discounts}</TableCell>
+                  <TableCell align="right">{row.NetSales}</TableCell>
+                  <TableCell align="right">{row.CostOfGoods}</TableCell>
+                  <TableCell align="right">{row.GrossProfi}</TableCell>
+                </TableRow>
+              ))
+            ) : (
+              <NoData />
+            )}
+          </TableBody>
+        </Table>
       </TableContainer>
       <Box display="flex" justifyContent="space-between" alignItems="center" p={2}>
-        <Button  
-            variant="contained"
-            onClick={handlePreviousPage}
-            disabled={page === 0}
-            sx={{ backgroundColor: '#580865', '&:hover': { backgroundColor: '#580865' } }}>
-            {'<'}
-        </Button>
-        <Typography variant="body1">
-          Page {page + 1} of {Math.ceil(rows.length / rowsPerPage)}
-        </Typography>
-        <Button 
-            variant="contained" 
-            onClick={handleNextPage} 
-            disabled={(page + 1) * rowsPerPage >= rows.length}
-            sx={{ backgroundColor: '#580865', '&:hover': { backgroundColor: '#580865' } }}>
-          {'>'}
-        </Button>
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 20, 50]}
+          component="div"
+          count={rows.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
       </Box>
-      <Box display="flex" justifyContent="center" alignItems="center" p={2}>
-        <FormControl variant="outlined" sx={{ minWidth: 120 }}>
-          <InputLabel id="rows-per-page-label">Rows per page</InputLabel>
-          <Select
-            labelId="rows-per-page-label"
-            value={rowsPerPage}
-            onChange={handleRowsPerPageChange}
-            label="Rows per page"
-          >
-            <MenuItem value={5}>5</MenuItem>
-            <MenuItem value={10}>10</MenuItem>
-            <MenuItem value={20}>20</MenuItem>
-            <MenuItem value={50}>50</MenuItem>
-          </Select>
-        </FormControl>
-      </Box>
-      </>
-    
+    </>
   );
 }

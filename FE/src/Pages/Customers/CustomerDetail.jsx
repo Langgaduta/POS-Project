@@ -4,14 +4,14 @@ import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import Navbar from '../../Components/Elements/Navbar/Navbar';
 
-const Settings = () => {
+const CustomerDetail = () => {
   return (
     <div className="container">
       <div className="row text-center mt-4" style={{height: '100vh'}}>
-        <h1>Settings</h1>
+        <h1>CustomerDetail</h1>
       </div>
     </div>
   );
 };
 
-export default Settings;
+export default CustomerDetail;
