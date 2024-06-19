@@ -96,7 +96,7 @@ const Sidebar = () => {
                 </Link>
               </li>
               <li className="sidebar-item">
-                <Link to="discountss" className="sidebar-link  text-white">
+                <Link to="discounts" className="sidebar-link  text-white">
                   Discounts
                 </Link>
               </li>
@@ -151,7 +151,7 @@ const Sidebar = () => {
             </ul>
           </li>
           <li className="sidebar-item">
-            <Link to="setting" className="sidebar-link">
+            <Link to="/Settings/Features" className="sidebar-link">
               <i className="lni lni-cog"></i>
               <span>Settings</span>
             </Link>
@@ -161,6 +161,23 @@ const Sidebar = () => {
               <i className="fa-regular fa-circle-question"></i>
               <span>Help</span>
             </Link>
+            {/* <ul className="sidebar-dropdown list-unstyled collapse employees px-4 mx-2">
+              <li className="sidebar-item">
+                <Link to="employee-list" className="sidebar-link  text-white">
+                  Help Center
+                </Link>
+              </li>
+              <li className="sidebar-item">
+                <Link to="Access-rights" className="sidebar-link text-white">
+                  Comunyty
+                </Link>
+              </li>
+              <li className="sidebar-item">
+                <Link to="Access-rights" className="sidebar-link text-white">
+                  Access Rights
+                </Link>
+              </li>
+            </ul> */}
           </li>
         </ul>
       </aside>

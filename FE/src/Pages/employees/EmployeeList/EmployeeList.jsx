@@ -1,17 +1,30 @@
-// pages/SalesSummary.jsx
-// eslint-disable-next-line no-unused-vars
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
-import Navbar from '../../../Components/Elements/Navbar/Navbar';
+import BasicTable from '../../../Components/Elements/TableExport/Tableexport';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTable } from '@fortawesome/free-solid-svg-icons';
+import { Button, Grid } from '@mui/material';
 
-const EmployeeList = () => {
+const SalesSummary = () => {
   return (
-    <div className="container">
-      <div className="row text-center mt-4" style={{height: '100vh'}}>
-        <h1>Employee List</h1>
+    <div className="container-fluid">
+      <div className="row justify-content-center" style={{ minHeight: '100vh', backgroundColor: '#e8e7e9', marginLeft: '57px', overflowX: 'hidden' }}>
+        <div className="col-md-12">
+          <div className="card mt-3 justify-content-center shadow" style={{ overflowX: 'hidden', maxWidth: "1300px" }}>
+            <div className="card-body">
+              <div className='d-flex justify-content-between'>
+              <Grid item>
+                <Button variant="contained" style={{ backgroundColor: '#580865' }}>
+                  + ADD EMPLOYEE
+                </Button>
+              </Grid>
+              </div>
+              <BasicTable />
+            </div>  
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default EmployeeList;
+export default SalesSummary;

@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
-import { Card, CardContent, Button, Checkbox, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination, Typography, Box } from '@mui/material';
-// import { useHistory } from 'react-router-dom';
+import { CardContent, Button, Checkbox, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination, Typography, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import NoData from '../NoData/NoData';
 
-const items = [
-  { name: 'Item 1', count: 10, color: 'gray' },
-  { name: 'Item 2', count: 15, color: 'red' },
-  { name: 'Item 3', count: 20, color: 'pink' },
-  { name: 'Item 4', count: 5, color: 'orange' },
-  { name: 'Item 5', count: 12, color: 'yellow' },
-  { name: 'Item 6', count: 25, color: 'lime' },
-  { name: 'Item 7', count: 8, color: 'green' },
-  { name: 'Item 8', count: 30, color: 'lightblue' },
-  { name: 'Item 9', count: 18, color: 'purple' },
-];
 
 const List = (props) => {
+  const headList = [props.headList1, props.headList2, props.headList3]
+  const items = [
+    { name: 'Item 1', categories: ['Category 1', 'Category 2'], color: props.color },
+    { name: 'Item 2', categories: ['Category 3'], color: 'lightgreen' },
+    { name: 'Item 3', categories: ['Category 2', 'Category 4'], color: 'lightgreen' },
+    { name: 'Item 4', categories: ['Category 1'], color: 'lightgreen' },
+    { name: 'Item 5', categories: ['Category 5', 'Category 6'], color: 'lightgreen' },
+    { name: 'Item 6', categories: ['Category 1', 'Category 7'], color: 'lightgreen' },
+    { name: 'Item 7', categories: ['Category 8'], color: 'lightgreen' },
+    { name: 'Item 8', categories: ['Category 9'], color: 'lightgreen' },
+    { name: 'Item 9', categories: ['Category 10'], color: 'lightgreen' },
+  ];
   const [selectedItems, setSelectedItems] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
-  // const history = useHistory();
 
   const handleSelectAll = (event) => {
     if (event.target.checked) {
@@ -62,8 +62,23 @@ const List = (props) => {
   const isSelected = (itemName) => selectedItems.indexOf(itemName) !== -1;
 
   return (
-      <CardContent>
-      <Link to={props.link}>
+    <CardContent>
+      {items.length === 0 ? (
+        <Box display="flex" flexDirection="column" alignItems="center">
+          <NoData/>
+          <Box mt={2}>
+          <Link to={props.link}>
+            <Button variant="contained" style={{ backgroundColor: '#580865' }}>
+            +Add Category
+            </Button>
+        </Link>
+          </Box>
+        </Box>
+      ) : (
+        <>
+          
+          <Box display="flex" alignItems="center" justifyContent="space-between">
+          <Link to={props.link}>
             <Button variant="contained" style={{ backgroundColor: '#580865' }}>
             +Add Category
             </Button>
@@ -75,68 +90,75 @@ const List = (props) => {
             <i className="fas fa-trash-alt" style={{ marginRight: '5px' }}></i>
             Delete
           </Button>
-        )}
-        <TableContainer>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell padding="checkbox">
-                  <Checkbox
-                    indeterminate={selectedItems.length > 0 && selectedItems.length < rowsPerPage}
-                    checked={selectedItems.length === rowsPerPage}
-                    onChange={handleSelectAll}
-                  />
-                </TableCell>
-                <TableCell>Item</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {items.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item) => {
-                const isItemSelected = isSelected(item.name);
-                return (
-                  <TableRow key={item.name} selected={isItemSelected}>
-                    <TableCell padding="checkbox">
-                      <Checkbox
-                        checked={isItemSelected}
-                        onChange={() => handleSelectItem(item.name)}
-                      />
-                    </TableCell>
-                    <TableCell>
-                      <Box display="flex" alignItems="center">
+            )}
+          </Box>
+          <TableContainer>
+            <Table>
+              <TableHead>
+                      <TableCell padding="checkbox">
+                        <Checkbox
+                          indeterminate={selectedItems.length > 0 && selectedItems.length < rowsPerPage}
+                          checked={selectedItems.length === rowsPerPage}
+                          onChange={handleSelectAll}
+                        />
+                      </TableCell>
+                    {headList.map((name, index) => (
+                      <TableCell key={index} className='text-body-tertiary'>{name}</TableCell>
+                    ))}
+              </TableHead>
+              <TableBody>
+                {items.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item) => {
+                  const isItemSelected = isSelected(item.name);
+                  return (
+                    <TableRow key={item.name} selected={isItemSelected}>
+                      <TableCell padding="checkbox">
+                        <Checkbox
+                          checked={isItemSelected}
+                          onChange={() => handleSelectItem(item.name)}
+                        />
+                      </TableCell>
+                      <TableCell>
+                        <Box display="flex" alignItems="center">
                         <Box
                           sx={{
-                            width: 38,
-                            height: 38,
+                            width: 38,  // Perbesar lingkaran
+                            height: 38, // Perbesar lingkaran
                             borderRadius: '50%',
-                            backgroundColor: item.color,
+                            backgroundColor: item.color,  // Ubah warna menjadi hijau muda
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
                             marginRight: 2,
                           }}
-                        />
-                          {/* <i className="fas fa-trash-alt" style={{ marginLeft: '0px' }}></i> */}
-                        <Box>
-                          <Typography>{item.name}</Typography>
-                          <Typography variant="body2" color="textSecondary">
-                            {item.count} items
-                          </Typography>
+                        >
+                         <i className={props.icon} style={{ color: 'white', fontSize: '18px' }}></i> 
                         </Box>
-                      </Box>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[5, 10, 20, 50]}
-          component="div"
-          count={items.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        />
-      </CardContent>
+                          <Box>
+                            <Typography>{item.name}</Typography>
+                            <Typography variant="body2" color="textSecondary">
+                              {item.categories.join(', ')}
+                            </Typography>
+                          </Box>
+                        </Box>
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <TablePagination
+            rowsPerPageOptions={[5, 10, 20, 50]}
+            component="div"
+            count={items.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
+        </>
+      )}
+    </CardContent>
   );
 };
 

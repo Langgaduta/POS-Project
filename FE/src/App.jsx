@@ -16,6 +16,8 @@ import SalesByPaymentType from './Pages/Reports/SalesByPaymentType/SalesByPaymen
 import Receipts from './Pages/Reports/Receipts/Receipts';
 import SalesByModifier from './Pages/Reports/SalesByModifier/SalesByModifier';
 import Discounts from './Pages/Reports/Discounts/Discounts';
+import Discountss from './Pages/Items/Discounts/Discounts';
+import Subscription from './Pages/Settings/Subscription';
 import Taxes from './Pages/Reports/Taxes/Taxes';
 import ItemList from './Pages/Items/ItemsList/ItemList';
 import AddItem from './Pages/Items/ItemsList/AddItem/AddItem';
@@ -26,10 +28,15 @@ import Modifier from './Pages/Items/Modifier/Modifier';
 import InventoryManagement from './Pages/InventoryManagement/InventoryManagement';
 import AccessRights from './Pages/employees/AccessRights/AccessRights';
 import EmployeeList from './Pages/employees/EmployeeList/EmployeeList';
-import Customers from './Pages/Customers/Cutomers';
+import Customers from './Pages/Customers/Customers';
+import CustomerDetail from './Pages/Customers/CustomerDetail';
 import AccessToken from './Pages/Integrations/AccessToken/AccessToken';
 import Apps from './Pages/Integrations/Apps/Apps';
-import Settings from './Pages/Settings/Settings';
+import Features from './Pages/Settings/Features';
+import Payment from './Pages/Settings/Payment';
+import Takes from './Pages/Settings/Takes';
+import Store from './Pages/Settings/Store';
+import Pos from './Pages/Settings/Pos';
 import Help from './Pages/Help/Help';
 // import AddCategory from './Pages/Items/Categories/AddCategory/AddCategory';
 
@@ -51,7 +58,7 @@ const App = () => {
         <Route path="/sales-by-payment-type" element={<SalesByPaymentType />} />
         <Route path="/receipts" element={<Receipts />} />
         <Route path="/sales-by-modifier" element={<SalesByModifier />} />
-        <Route path="/discounts" element={<Discounts />} />
+        <Route path="/discounts" element={<Discountss />} />
         <Route path="/taxes" element={<Taxes />} />
         <Route path="/item-list" element={<ItemList />} />
         <Route path="/item-list/add-item" element={<AddItem />} />
@@ -64,9 +71,15 @@ const App = () => {
         <Route path="/employee-list" element={<EmployeeList />} />
         <Route path="/access-rights" element={<AccessRights />} />
         <Route path="/customers" element={<Customers />} />
+        <Route path="/customer/Customer-Info" element={<CustomerDetail />} />
         <Route path="/access-token" element={<AccessToken />} />
         <Route path="/apps" element={<Apps />} />
-        <Route path="/setting" element={<Settings />} />
+        <Route path="/Settings/Features" element={<Features />} />
+        <Route path="/Settings/Billing-subscriptions" element={<Subscription />} />
+        <Route path="/Settings/Payment" element={<Payment />} />
+        <Route path="/Settings/Taxes" element={<Takes />} />
+        <Route path="/Settings/Stores" element={<Store />} />
+        <Route path="/Settings/Pos-devices" element={<Pos />} />
         <Route path="/help" element={<Help />} />
       </Routes>
     </Router>
