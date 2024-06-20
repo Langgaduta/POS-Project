@@ -25,6 +25,7 @@ import Import from './Pages/Items/ItemsList/Import/Import';
 import Categories from './Pages/Items/Categories/Categories';
 import AddCategory from './Pages/Items/Categories/AddCategory/AddCategory';
 import Modifier from './Pages/Items/Modifier/Modifier';
+import AddModifier from './Pages/Items/Modifier/AddModifier';
 import InventoryManagement from './Pages/InventoryManagement/InventoryManagement';
 import AccessRights from './Pages/employees/AccessRights/AccessRights';
 import EmployeeList from './Pages/employees/EmployeeList/EmployeeList';
@@ -66,6 +67,7 @@ const App = () => {
         <Route path="/categories" element={<Categories />} />
         <Route path="/categories/add-category" element={<AddCategory />} />
         <Route path="/modifier" element={<Modifier />} />
+        <Route path="/modifier/add-modifier" element={<AddModifier />} />
         <Route path="/discounts" element={<Discounts />} />
         <Route path="/inventory-management" element={<InventoryManagement />} />
         <Route path="/employee-list" element={<EmployeeList />} />
