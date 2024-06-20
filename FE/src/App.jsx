@@ -34,7 +34,10 @@ import EmployeeList from './Pages/employees/EmployeeList/EmployeeList';
 import AddEmployee from './Pages/employees/EmployeeList/AddEmployee/AddEmployee';
 import Customers from './Pages/Customers/Customers';
 import CustomerDetail from './Pages/Customers/CustomerDetail';
+import ImportCustomers from './Pages/Customers/ImportCustome';
+import AddCustomer from './Pages/Customers/AddCustomers';
 import AccessToken from './Pages/Integrations/AccessToken/AccessToken';
+import AddAccToken from './Pages/Integrations/AccessToken/AddAccessToken';
 import Apps from './Pages/Integrations/Apps/Apps';
 import Features from './Pages/Settings/Features';
 import Payment from './Pages/Settings/Payment';
@@ -80,8 +83,11 @@ const App = () => {
         <Route path="/access-rights" element={<AccessRights />} />
         <Route path="/access-rights/add-role" element={<AddRole />} />
         <Route path="/customers" element={<Customers />} />
+        <Route path="/customers/Add-cus" element={<AddCustomer />} />
+        <Route path="/customers/Import-cus" element={<ImportCustomers />} />
         <Route path="/customer/Customer-Info" element={<CustomerDetail />} />
         <Route path="/access-token" element={<AccessToken />} />
+        <Route path="/access-token/add-acc" element={<AddAccToken />} />
         <Route path="/apps" element={<Apps />} />
         <Route path="/Settings/Features" element={<Features />} />
         <Route path="/Settings/Billing-subscriptions" element={<Subscription />} />

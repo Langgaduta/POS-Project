@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import NoData from '../NoData/NoData';
 
 const List = (props) => {
-  const headList = [props.headList1, props.headList2, props.headList3, props.headList4, props.headList5, props.headList6  ];
+  const headList = [props.headList1, props.headList2, props.headList3, props.headList4, props.headList5, props.headList6, props.headList7  ];
   const items = [
     { name: 'Item 1', categories: ['Category 1', 'Category 2'], color: props.color },
     { name: 'Item 2', categories: ['Category 3'], color: 'lightgreen' },

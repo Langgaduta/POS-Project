@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../Components/Elements/Button/Button';
-import SelectVariant from '../../Components/Elements/Select/Select';
-import BasicTable from '../../Components/Elements/TableExport/Tableexport';
-import NoData from '../../Components/Elements/NoData/NoData';
+import List from '../../Components/Elements/List/List';
 
 const ItemList = () => {
   return (
@@ -16,17 +14,18 @@ const ItemList = () => {
                 <div className="">
                   <div className="row">
                     <div className="col-md-6">
-                        <Link to="/item-list/add-item" className="btn text-white mt-3 me-2 shadow" style={{ backgroundColor: '#7e148f', textDecoration: 'none' }}>
+                        <Link to="/customers/Add-cus" className="btn text-white mt-3 me-2 shadow" style={{ backgroundColor: '#7e148f', textDecoration: 'none' }}>
                           + Add Item
                         </Link>
-                      <Link to="/item-list/import" className="btn mt-3 me-2 " style={{textDecoration: 'none' }}>
+                      <Link to="/customers/Import-cus" className="btn mt-3 me-2 " style={{textDecoration: 'none' }}>
                         Import
                       </Link>
                       <Button className="btn mt-3">Export</Button>
                     </div>
                   </div>
                   <div className="mt-4">
-                    <BasicTable link="/customer/Customer-Info"/>  
+                  <List headList1="Customer" headList2="Contacts" headList3="First visit" headList4="Last visit" headList5="Total visits" headList6="Total spent" headList7="Points balance"/>
+                    {/* <BasicTable link="/customer/Customer-Info"/>   */}
                     {/* <NoData/> */}
                   </div>
                 </div>
