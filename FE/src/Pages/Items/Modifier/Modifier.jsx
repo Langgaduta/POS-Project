@@ -9,7 +9,7 @@ const ItemList = () => {
           <div style={{ maxWidth: '760px' }}>
             <div className="card mt-3 shadow" style={{ overflowX: 'hidden' }}>
               <div className="card-body">
-                <List link="/categories/add-category" icon="fas fa-file" color="lightgreen" headList1="item"/>
+                <List link="/modifier/add-modifier" icon="fas fa-file" color="lightgreen" headList1="item"/>
               </div>
             </div>
           </div>
