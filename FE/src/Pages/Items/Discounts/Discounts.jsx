@@ -1,5 +1,7 @@
 import React from 'react';
 import List from '../../../Components/Elements/List/List';
+import { Link } from 'react-router-dom';
+import Button from '../../../Components/Elements/Button/Button';
 
 const Discountss = () => {
   return (
@@ -9,7 +11,12 @@ const Discountss = () => {
           <div style={{ maxWidth: '760px' }}>
             <div className="card mt-3 shadow" style={{ overflowX: 'hidden' }}>
               <div className="card-body">
-                <List link="/categories/add-category" icon="fas fa-tags" color="#sF27BBD " headList1="Name" headList2="Value" headList3="Restricted access"/>
+                <Link to="/discounts/add-discounts">
+                  <Button className="text-white" style={{ backgroundColor: '#7e148f', textDecoration: 'none' }}>
+                    + Add Discounts
+                  </Button>
+                </Link>
+                <List link="/categories/add-category" icon="fas fa-tags" color="#sF27BBD " headList1="Name" headList2="Value" headList3="Restricted access" />
               </div>
             </div>
           </div>

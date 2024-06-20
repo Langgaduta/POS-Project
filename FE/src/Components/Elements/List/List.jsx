@@ -3,9 +3,8 @@ import { CardContent, Button, Checkbox, Table, TableBody, TableCell, TableContai
 import { Link } from 'react-router-dom';
 import NoData from '../NoData/NoData';
 
-
 const List = (props) => {
-  const headList = [props.headList1, props.headList2, props.headList3]
+  const headList = [props.headList1, props.headList2, props.headList3, props.headList4, props.headList5, props.headList6  ];
   const items = [
     { name: 'Item 1', categories: ['Category 1', 'Category 2'], color: props.color },
     { name: 'Item 2', categories: ['Category 3'], color: 'lightgreen' },
@@ -23,7 +22,7 @@ const List = (props) => {
 
   const handleSelectAll = (event) => {
     if (event.target.checked) {
-      const newSelectedItems = items.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(item => item.name);
+      const newSelectedItems = items.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item) => item.name);
       setSelectedItems(newSelectedItems);
     } else {
       setSelectedItems([]);
@@ -41,10 +40,7 @@ const List = (props) => {
     } else if (selectedIndex === selectedItems.length - 1) {
       newSelectedItems = newSelectedItems.concat(selectedItems.slice(0, -1));
     } else if (selectedIndex > 0) {
-      newSelectedItems = newSelectedItems.concat(
-        selectedItems.slice(0, selectedIndex),
-        selectedItems.slice(selectedIndex + 1),
-      );
+      newSelectedItems = newSelectedItems.concat(selectedItems.slice(0, selectedIndex), selectedItems.slice(selectedIndex + 1));
     }
 
     setSelectedItems(newSelectedItems);
@@ -65,46 +61,41 @@ const List = (props) => {
     <CardContent>
       {items.length === 0 ? (
         <Box display="flex" flexDirection="column" alignItems="center">
-          <NoData/>
+          <NoData />
           <Box mt={2}>
-          <Link to={props.link}>
-            <Button variant="contained" style={{ backgroundColor: '#580865' }}>
-            +Add Category
-            </Button>
-        </Link>
+            {/* <Link to={props.link}>
+              <Button variant="contained" style={{ backgroundColor: '#580865' }}>
+                +Add Category
+              </Button>
+            </Link> */}
           </Box>
         </Box>
       ) : (
         <>
-          
           <Box display="flex" alignItems="center" justifyContent="space-between">
-          <Link to={props.link}>
-            <Button variant="contained" style={{ backgroundColor: '#580865' }}>
-            +Add Category
-            </Button>
-        </Link>
-        {selectedItems.length > 0 && (
-          <Button
-            style={{ marginLeft: '10px', backgroundColor: 'white', color: 'black' }}
-          >
-            <i className="fas fa-trash-alt" style={{ marginRight: '5px' }}></i>
-            Delete
-          </Button>
+            {/* <Link to={props.link}>
+              <Button variant="contained" style={{ backgroundColor: '#580865' }}>
+                +Add Category
+              </Button>
+            </Link> */}
+            {selectedItems.length > 0 && (
+              <Button style={{ marginLeft: '10px', backgroundColor: 'white', color: 'black' }}>
+                <i className="fas fa-trash-alt" style={{ marginRight: '5px' }}></i>
+                Delete
+              </Button>
             )}
           </Box>
           <TableContainer>
             <Table>
               <TableHead>
-                      <TableCell padding="checkbox">
-                        <Checkbox
-                          indeterminate={selectedItems.length > 0 && selectedItems.length < rowsPerPage}
-                          checked={selectedItems.length === rowsPerPage}
-                          onChange={handleSelectAll}
-                        />
-                      </TableCell>
-                    {headList.map((name, index) => (
-                      <TableCell key={index} className='text-body-tertiary'>{name}</TableCell>
-                    ))}
+                <TableCell padding="checkbox">
+                  <Checkbox indeterminate={selectedItems.length > 0 && selectedItems.length < rowsPerPage} checked={selectedItems.length === rowsPerPage} onChange={handleSelectAll} />
+                </TableCell>
+                {headList.map((name, index) => (
+                  <TableCell key={index} className="text-body-tertiary">
+                    {name}
+                  </TableCell>
+                ))}
               </TableHead>
               <TableBody>
                 {items.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((item) => {
@@ -112,27 +103,24 @@ const List = (props) => {
                   return (
                     <TableRow key={item.name} selected={isItemSelected}>
                       <TableCell padding="checkbox">
-                        <Checkbox
-                          checked={isItemSelected}
-                          onChange={() => handleSelectItem(item.name)}
-                        />
+                        <Checkbox checked={isItemSelected} onChange={() => handleSelectItem(item.name)} />
                       </TableCell>
                       <TableCell>
                         <Box display="flex" alignItems="center">
-                        <Box
-                          sx={{
-                            width: 38,  // Perbesar lingkaran
-                            height: 38, // Perbesar lingkaran
-                            borderRadius: '50%',
-                            backgroundColor: item.color,  // Ubah warna menjadi hijau muda
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            marginRight: 2,
-                          }}
-                        >
-                         <i className={props.icon} style={{ color: 'white', fontSize: '18px' }}></i> 
-                        </Box>
+                          <Box
+                            sx={{
+                              width: 38, // Perbesar lingkaran
+                              height: 38, // Perbesar lingkaran
+                              borderRadius: '50%',
+                              backgroundColor: item.color, // Ubah warna menjadi hijau muda
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              marginRight: 2,
+                            }}
+                          >
+                            <i className={props.icon} style={{ color: 'white', fontSize: '18px' }}></i>
+                          </Box>
                           <Box>
                             <Typography>{item.name}</Typography>
                             <Typography variant="body2" color="textSecondary">
@@ -147,15 +135,7 @@ const List = (props) => {
               </TableBody>
             </Table>
           </TableContainer>
-          <TablePagination
-            rowsPerPageOptions={[5, 10, 20, 50]}
-            component="div"
-            count={items.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
+          <TablePagination rowsPerPageOptions={[5, 10, 20, 50]} component="div" count={items.length} rowsPerPage={rowsPerPage} page={page} onPageChange={handleChangePage} onRowsPerPageChange={handleChangeRowsPerPage} />
         </>
       )}
     </CardContent>

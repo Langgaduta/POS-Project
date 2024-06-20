@@ -1,5 +1,7 @@
 import React from 'react';
 import List from '../../../Components/Elements/List/List';
+import Button from '../../../Components/Elements/Button/Button';
+import { Link } from 'react-router-dom';
 
 const ItemList = () => {
   return (
@@ -9,7 +11,10 @@ const ItemList = () => {
           <div style={{ maxWidth: '760px' }}>
             <div className="card mt-3 shadow" style={{ overflowX: 'hidden' }}>
               <div className="card-body">
-                <List link="/modifier/add-modifier" icon="fas fa-file" color="lightgreen" headList1="item"/>
+                <Link to="/modifier/add-modifier">
+                  <Button className="text-white" style={{ backgroundColor: '#7e148f', textDecoration: 'none' }}>+ Add Modifier</Button>
+                </Link>
+                <List link="/modifier/add-modifier" icon="fas fa-file" color="lightgreen" headList1="item" />
               </div>
             </div>
           </div>

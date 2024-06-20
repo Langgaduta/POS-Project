@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import PaymentIcon from '@mui/icons-material/Payment';
-import BasicTextFields from '../../../Components/Elements/TextField/TextField';
-import Button from '../../../Components/Elements/Button/Button';
+import BasicTextFields from '../../../../Components/Elements/TextField/TextField';
+import Button from '../../../../Components/Elements/Button/Button';
 import { Link } from 'react-router-dom';
+import SelectVariant from '../../../../Components/Elements/Select/Select';
 
-const AddModifier = () => {
+const AddEmployee = () => {
   const handleSave = () => {
     setShowSelectedColor(true);
     // Lakukan logika penyimpanan data atau aksi lainnya di sini
@@ -20,25 +20,35 @@ const AddModifier = () => {
                 <div className="container">
                   <div className="row">
                     <div className="col-md-12 text-center">
-                      <PaymentIcon style={{ fontSize: 100 }} />
+                      {/* <PaymentIcon style={{ fontSize: 100 }} /> */}
+                      <i className="fa-solid fa-user me-3 " style={{ color: '#580865', fontSize: 90 }}></i>
                     </div>
                     <div className="col-md-12">
-                      <BasicTextFields label="Modifier Name" variant="standard" style={{ width: '100%' }} />
+                      <BasicTextFields label="Name" variant="standard" style={{ width: '100%' }} />
                     </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <BasicTextFields label="Option Name" variant="standard" style={{ width: '100%' }} />
+                    <div className="col-md-12">
+                      <BasicTextFields label="Email" variant="standard" style={{ width: '100%' }} />
                     </div>
-                    <div className="col-md-6">
-                      <BasicTextFields label="Price" variant="standard" style={{ width: '100%' }} />
+                    <div className="col-md-12">
+                      <BasicTextFields label="Phone" variant="standard" style={{ width: '100%' }} />
+                    </div>
+                    <div className="col-md-12">
+                    <SelectVariant
+                        label="Select Role"
+                        options={[
+                          { value: 10, label: 'Administrator' },
+                          { value: 20, label: 'Manager' },
+                          { value: 20, label: 'Cashier' },
+                        ]}
+                        style={{ width: '100%' }}
+                      />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="text-end">
-              <Link to="/modifier">
+              <Link to="/employee-list">
                 <Button className="btn me-2" style={{ backgroundColor: '#ffffff', textDecoration: 'none' }}>
                   Cancel
                 </Button>
@@ -54,4 +64,4 @@ const AddModifier = () => {
   );
 };
 
-export default AddModifier;
+export default AddEmployee;

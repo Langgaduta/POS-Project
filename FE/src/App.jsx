@@ -1,6 +1,6 @@
 // App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './Components/Elements/Navbar/Navbar';
 import Sidebar from './Components/Elements/Sidebar/SideBar';
 import SalesSummary from './Pages/Reports/SalesSummary/SalesSummary';
@@ -17,6 +17,7 @@ import Receipts from './Pages/Reports/Receipts/Receipts';
 import SalesByModifier from './Pages/Reports/SalesByModifier/SalesByModifier';
 import Discounts from './Pages/Reports/Discounts/Discounts';
 import Discountss from './Pages/Items/Discounts/Discounts';
+import AddDiscounts from './Pages/Items/Discounts/AddDiscounts/AddDiscounts';
 import Subscription from './Pages/Settings/Subscription';
 import Taxes from './Pages/Reports/Taxes/Taxes';
 import ItemList from './Pages/Items/ItemsList/ItemList';
@@ -28,7 +29,9 @@ import Modifier from './Pages/Items/Modifier/Modifier';
 import AddModifier from './Pages/Items/Modifier/AddModifier';
 import InventoryManagement from './Pages/InventoryManagement/InventoryManagement';
 import AccessRights from './Pages/employees/AccessRights/AccessRights';
+import AddRole from './Pages/employees/AccessRights/AddRole/AddRole';
 import EmployeeList from './Pages/employees/EmployeeList/EmployeeList';
+import AddEmployee from './Pages/employees/EmployeeList/AddEmployee/AddEmployee';
 import Customers from './Pages/Customers/Customers';
 import CustomerDetail from './Pages/Customers/CustomerDetail';
 import AccessToken from './Pages/Integrations/AccessToken/AccessToken';
@@ -47,6 +50,7 @@ const App = () => {
       <Navbar />
       <Sidebar />
       <Routes>
+        <Route path="/" element={<Navigate to="/sales-summary/gross-sales" />} />
         <Route path="/sales-summary" element={<SalesSummary />} />
         <Route path="/sales-summary/gross-sales" element={<GrossSales />} />
         <Route path="/sales-summary/refunds" element={<Refunds />} />
@@ -69,9 +73,12 @@ const App = () => {
         <Route path="/modifier" element={<Modifier />} />
         <Route path="/modifier/add-modifier" element={<AddModifier />} />
         <Route path="/discounts" element={<Discounts />} />
+        <Route path="/discounts/add-discounts" element={<AddDiscounts />} />
         <Route path="/inventory-management" element={<InventoryManagement />} />
         <Route path="/employee-list" element={<EmployeeList />} />
+        <Route path="/employee-list/add-employee" element={<AddEmployee />} />
         <Route path="/access-rights" element={<AccessRights />} />
+        <Route path="/access-rights/add-role" element={<AddRole />} />
         <Route path="/customers" element={<Customers />} />
         <Route path="/customer/Customer-Info" element={<CustomerDetail />} />
         <Route path="/access-token" element={<AccessToken />} />

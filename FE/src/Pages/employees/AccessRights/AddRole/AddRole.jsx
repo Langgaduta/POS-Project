@@ -1,11 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import PaymentIcon from '@mui/icons-material/Payment';
-import BasicTextFields from '../../../Components/Elements/TextField/TextField';
-import Button from '../../../Components/Elements/Button/Button';
+import FormControlLabelPosition from '../../../../Components/Switch/Switch';
+import BasicTextFields from '../../../../Components/Elements/TextField/TextField';
+import Button from '../../../../Components/Elements/Button/Button';
 import { Link } from 'react-router-dom';
 
-const AddModifier = () => {
+const AddRole = () => {
   const handleSave = () => {
     setShowSelectedColor(true);
     // Lakukan logika penyimpanan data atau aksi lainnya di sini
@@ -19,26 +20,37 @@ const AddModifier = () => {
               <div className="card-body">
                 <div className="container">
                   <div className="row">
-                    <div className="col-md-12 text-center">
-                      <PaymentIcon style={{ fontSize: 100 }} />
-                    </div>
-                    <div className="col-md-12">
-                      <BasicTextFields label="Modifier Name" variant="standard" style={{ width: '100%' }} />
+                    <div className="col-md-12 mb-3">
+                      <BasicTextFields label=" Name" variant="standard" style={{ width: '100%'}} />
                     </div>
                   </div>
                   <div className="row">
-                    <div className="col-md-6">
-                      <BasicTextFields label="Option Name" variant="standard" style={{ width: '100%' }} />
+                    <div className="col-md-8">
+                      <p className="fw-bold" style={{ fontSize: '13px' }}>
+                        POS
+                      </p>
+                      <p style={{ fontSize: '13px' }}>Employees can log in to the app using personal PIN code</p>
                     </div>
-                    <div className="col-md-6">
-                      <BasicTextFields label="Price" variant="standard" style={{ width: '100%' }} />
+                    <div className="col-md-4 text-end">
+                      <FormControlLabelPosition value="" label="" labelPlacement="start" />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-md-8">
+                      <p className="fw-bold" style={{ fontSize: '13px' }}>
+                        Back Office
+                      </p>
+                      <p style={{ fontSize: '13px' }}>Employees can log in to the back office using their email and password</p>
+                    </div>
+                    <div className="col-md-4 text-end">
+                      <FormControlLabelPosition value="" label="" labelPlacement="start" />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="text-end">
-              <Link to="/modifier">
+              <Link to="/access-rights">
                 <Button className="btn me-2" style={{ backgroundColor: '#ffffff', textDecoration: 'none' }}>
                   Cancel
                 </Button>
@@ -54,4 +66,4 @@ const AddModifier = () => {
   );
 };
 
-export default AddModifier;
+export default AddRole;
